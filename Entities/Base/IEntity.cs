@@ -6,13 +6,6 @@ using System.Collections.Generic ;
 namespace PrototypeRPG2D.Entities {
 
 
-    public enum TextureTypes {
-        OnSite, 
-        WalkDown,
-        WalkUP,
-        WalkRight,
-        WalkLeft
-    }
 
 
     public interface IEntity : IObject {
@@ -30,13 +23,14 @@ namespace PrototypeRPG2D.Entities {
         /* 
         On implémente pas la texture 
         */
-        string IObject.texture { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
         Dictionary<TextureTypes, Texture2D> Textures {get;}  
 
         
         void Kill() ;
-        void Spawn() ; 
+        void Spawn() ;
+
+        void Use() ;  
 
     }
 }

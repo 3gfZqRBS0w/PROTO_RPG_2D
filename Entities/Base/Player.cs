@@ -10,16 +10,25 @@ namespace PrototypeRPG2D.Entities {
 
 
         private KeyboardState keyboardStateOld = Keyboard.GetState();
-        public Player() : base() {
+        public Player( Dictionary<TextureTypes, Texture2D> textures) : base(textures) {
+            
+        }
 
+        public override void LoadContent(ContentManager content)
+        {
+
+            this.animations[(int)Direction.Down] = new SpriteAnimation(Textures[TextureTypes.WalkDown], 4, 8);
+            this.animations[(int)Direction.Up] = new SpriteAnimation(Textures[TextureTypes.WalkUP], 4, 8);
+            this.animations[(int)Direction.Left] = new SpriteAnimation(Textures[TextureTypes.WalkLeft], 4, 8);
+            this.animations[(int)Direction.Right] = new SpriteAnimation(Textures[TextureTypes.WalkRight], 4, 8);
+
+            base.LoadContent(content);
         }
 
         public override void Update(GameTime gameTime) {
             KeyboardState keyboardState = Keyboard.GetState();
             double realSpeed = speed * gameTime.ElapsedGameTime.TotalSeconds;
-
-
-isMoving = false;
+            isMoving = false;
             if (keyboardState.IsKeyDown(Keys.Right))
             {
                 direction = Direction.Right;
@@ -46,7 +55,7 @@ isMoving = false;
                 isMoving = false;
             }
 
-            if (base.isdead)
+            if (isdead)
             {
                 isMoving = false;
             }
@@ -56,29 +65,18 @@ isMoving = false;
                 switch (direction)
                 {
                     case Direction.Down:
-                        if (position.Y < 1250)
-                        {
                             position =  new Vector2(position.X, position.Y + (float)realSpeed) ;
-                        }
                         break;
                     case Direction.Up:
-                        if (position.Y > 200)
-                        {
-
                             position = new Vector2(position.X, position.Y - (float)realSpeed ) ; 
-                        }
                         break;
                     case Direction.Left:
-                        if (position.X > 225)
-                        {
                             position = new Vector2(position.X - (float)realSpeed, position.Y ) ; 
-                        }
+                    
                         break;
                     case Direction.Right:
-                        if (position.X < 1275)
-                        {
                             position = new Vector2(position.X + (float)realSpeed, position.Y) ;
-                        }
+                       
                         break;
                     default:
                         break;
@@ -105,6 +103,11 @@ isMoving = false;
 
             keyboardStateOld = keyboardState;
         
+        }
+
+
+        public override void Draw(SpriteBatch spriteBatch) {
+            this.anim.Draw(spriteBatch);
         }
 
     }

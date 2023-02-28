@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "LIzSsVLTlOcE8kH0/PolpUHDtK/ANBh2gCyVnvNRx+qQn/K/c5YWbedGKVhbEJtk6t0TF1I4aEBH5Lk4eerc0Q==",
+  "dgSpecHash": "b3ttI/LUADfMd0zCxXmpp6iAKIgLHJcHtmvdyQmp0pH7Jdl4ON+hs5ORhvqni7UoMwhTnmW4Wk3F36GS4vmUaA==",
   "success": true,
   "projectFilePath": "/home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/PROTO_RPG_2D.csproj",
   "expectedPackageFiles": [
+    "/home/d8kvguub/.nuget/packages/comora/0.5.0/comora.0.5.0.nupkg.sha512",
     "/home/d8kvguub/.nuget/packages/monogame.content.builder.task/3.8.1.303/monogame.content.builder.task.3.8.1.303.nupkg.sha512",
     "/home/d8kvguub/.nuget/packages/monogame.framework.desktopgl/3.8.1.303/monogame.framework.desktopgl.3.8.1.303.nupkg.sha512"
   ],

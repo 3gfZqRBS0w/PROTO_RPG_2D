@@ -5,6 +5,15 @@ using System.Collections.Generic ;
 
 namespace PrototypeRPG2D.Entities {
 
+    public enum TextureTypes {
+        OnSite, 
+        WalkDown,
+        WalkUP,
+        WalkRight,
+        WalkLeft
+    }
+
+
 
     // Direction
 
@@ -20,8 +29,6 @@ namespace PrototypeRPG2D.Entities {
 
         Vector2 position {get; set;}  
         Direction direction {get; set; }
-        
-        string texture {get; set;}
 
         void SetPos(Vector2 pos) ;
         void SetDirection(Direction dir) ;
@@ -30,7 +37,6 @@ namespace PrototypeRPG2D.Entities {
         void Draw(SpriteBatch spriteBatch) ; 
 
         void Update(GameTime gameTime) ;
-
 
     }
 }

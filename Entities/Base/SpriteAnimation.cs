@@ -42,6 +42,8 @@ namespace PrototypeRPG2D.Entities
             FramesPerSecond = fps;
         }
 
+   
+
         public void Update(GameTime gameTime)
         {
             timeElapsed += (float)gameTime.ElapsedGameTime.TotalSeconds;
