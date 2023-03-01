@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content ; 
 using System.Collections.Generic ;
 using System;
+using PROTO_RPG_2D;
 
 namespace PrototypeRPG2D.Entities {
     public class Player : Entity {

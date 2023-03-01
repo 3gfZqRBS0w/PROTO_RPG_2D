@@ -29,6 +29,7 @@ namespace PrototypeRPG2D.Entities {
 
         Vector2 position {get; set;}  
         Direction direction {get; set; }
+        Rectangle collision {get; set;}
 
         void SetPos(Vector2 pos) ;
         void SetDirection(Direction dir) ;

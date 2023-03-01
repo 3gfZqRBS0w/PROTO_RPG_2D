@@ -1,10 +1,13 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+
 using PrototypeRPG2D.Entities ;
+using PrototypeRPG2D.Map ; 
 using Comora ;
 using System.Collections.Generic;
-using System ; 
+using System ;
+
 
 namespace PROTO_RPG_2D;
 
@@ -12,6 +15,9 @@ public class Game1 : Game
 {
 
     private Random rnd = new Random();
+
+
+    private Map map ; 
     private Player player ;
     private List<Entity> entities ; 
     private GraphicsDeviceManager _graphics;
@@ -30,6 +36,19 @@ public class Game1 : Game
 
 
     }
+
+
+
+    public bool CheckCollideWithEntities() {
+        foreach ( Entity ent in entities ) {
+            if ( player.collision.Intersects(ent.collision) ) {
+                return true ; 
+            }
+        }
+        return false ; 
+    }
+
+
 
     protected override void Initialize()
     {
@@ -66,11 +85,12 @@ public class Game1 : Game
         
 
 
-        for (int i=0 ; i > 10 ; ++i) {
+        for (int i=0 ; i < 10 ; ++i) {
             entities.Add(new Entity(textureEntite) {
-                position = new Vector2(rnd.Next(-10,10), rnd.Next(-10,10))
-            })  ; 
+                position = new Vector2(rnd.Next(-500,500), rnd.Next(-500,500))
+            })  ;
         }
+
 
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
@@ -88,9 +108,9 @@ public class Game1 : Game
 
 
             this.camera.Position = player.position ;
-            this.camera.Update(gameTime) ; 
-
+            this.camera.Update(gameTime) ;
             player.Update(gameTime) ;
+      
 
             foreach ( Entity ent in entities ) {
                 ent.Update(gameTime) ; 

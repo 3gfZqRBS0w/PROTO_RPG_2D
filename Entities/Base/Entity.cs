@@ -10,6 +10,8 @@ namespace PrototypeRPG2D.Entities {
 
         public Vector2 position {get; set;}
         public Direction direction {get; set;}
+
+        public Rectangle collision {get; set; }
         public double speed {get; set;}
 
         public  int radius {get; set;}
@@ -35,8 +37,9 @@ namespace PrototypeRPG2D.Entities {
             life = 100 ;
             radius = 100;
 
-        }
+            collision = new Rectangle((int)position.X, (int)position.Y, 10*radius, 10*radius) ;
 
+        }
 
 
         public virtual void SetPos(Vector2 dest) {
@@ -62,6 +65,8 @@ namespace PrototypeRPG2D.Entities {
 
         public virtual void Draw(SpriteBatch spriteBatch) {
             spriteBatch.Draw(Textures[TextureTypes.OnSite], position, Color.White);
+
+
         }
 
         public virtual void Use() {
