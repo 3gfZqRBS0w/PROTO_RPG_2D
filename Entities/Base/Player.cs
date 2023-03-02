@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content ; 
 using System.Collections.Generic ;
 using System;
+using System.Linq ;
 using PROTO_RPG_2D;
 
 namespace PrototypeRPG2D.Entities {
@@ -18,11 +19,11 @@ namespace PrototypeRPG2D.Entities {
         public override void LoadContent(ContentManager content)
         {
 
+
             this.animations[(int)Direction.Down] = new SpriteAnimation(Textures[TextureTypes.WalkDown], 4, 8);
             this.animations[(int)Direction.Up] = new SpriteAnimation(Textures[TextureTypes.WalkUP], 4, 8);
             this.animations[(int)Direction.Left] = new SpriteAnimation(Textures[TextureTypes.WalkLeft], 4, 8);
             this.animations[(int)Direction.Right] = new SpriteAnimation(Textures[TextureTypes.WalkRight], 4, 8);
-
             base.LoadContent(content);
         }
 
@@ -84,9 +85,13 @@ namespace PrototypeRPG2D.Entities {
                 }
             }
 
-            anim = animations[(int)direction];
 
+        
+            anim = animations[(int)direction];
+        
             anim.Position = new Vector2(position.X - 48, position.Y - 48);
+
+        
             
             if (keyboardState.IsKeyDown(Keys.Space))
             {
@@ -100,6 +105,7 @@ namespace PrototypeRPG2D.Entities {
             {
                 anim.setFrame(1);
             }
+        
 
 
             keyboardStateOld = keyboardState;
