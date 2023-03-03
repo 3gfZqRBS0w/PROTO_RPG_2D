@@ -15,8 +15,8 @@ using PrototypeRPG2D.Maps ;
 namespace PrototypeRPG2D.Maps {
 
     public struct MapSize {
-        Vector2 MinPoint {get;}
-        Vector2 MaxPoint {get;}    
+        public Vector2 MinPoint {get;}
+        public  Vector2 MaxPoint {get;}    
 
         public MapSize(Vector2 MinP, Vector2 MaxP) {
             MinPoint = MinP ;
@@ -31,13 +31,14 @@ namespace PrototypeRPG2D.Maps {
         Player player {get; set;}
         Vector2 spawnPoint {get; set;}
         MapSize mapSize {get; set;}
-
         Camera camera {get; set;}
+
+        bool Debug {get; set;}
         List<IObject> GetEntities() ;
 
 
         void LoadContent(ContentManager content) ; 
-        void Draw(SpriteBatch spriteBatch) ; 
+        void Draw(SpriteBatch spriteBatch, GraphicsDevice graphics) ; 
         void Update(GameTime gameTime) ;
 
     }

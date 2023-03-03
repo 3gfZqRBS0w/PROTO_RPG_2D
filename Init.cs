@@ -45,7 +45,8 @@ public class Init : Game
     {
 
 
-                Dictionary<TextureTypes, Texture2D> texturePlayer = new()
+        // Skin du joueur 
+        Dictionary<TextureTypes, Texture2D> texturePlayer = new()
         {
             [TextureTypes.OnSite] = Content.Load<Texture2D>("Player/player"),
             [TextureTypes.WalkDown] = Content.Load<Texture2D>("Player/walkDown"),
@@ -76,16 +77,6 @@ public class Init : Game
 
 
         map.LoadContent(Content);
-
-
-
-        /*
-                for (int i=0 ; i < 10 ; ++i) {
-                    entities.Add(new Entity(textureEntite) {
-                        position = new Vector2(rnd.Next(-500,500), rnd.Next(-500,500))
-                    })  ;
-                }
-        */
 
         base.LoadContent();
 
@@ -119,7 +110,7 @@ public class Init : Game
         GraphicsDevice.Clear(Color.Black);
 
 
-        map.Draw(_spriteBatch);
+        map.Draw(_spriteBatch, GraphicsDevice);
         //   player.Draw(_spriteBatch) ;
 
 

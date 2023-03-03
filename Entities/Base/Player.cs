@@ -105,6 +105,8 @@ namespace PrototypeRPG2D.Entities {
             {
                 anim.setFrame(1);
             }
+
+            base.Update(gameTime) ; 
         
 
 

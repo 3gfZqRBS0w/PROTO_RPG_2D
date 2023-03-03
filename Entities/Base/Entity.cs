@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content ; 
 using System.Collections.Generic ;
 using PrototypeRPG2D.Entities ;
+using System ;
 
 namespace PrototypeRPG2D.Entities {
     public class Entity : IEntity {
@@ -36,10 +37,17 @@ namespace PrototypeRPG2D.Entities {
             speed = 100 ;
             life = 100 ;
             radius = 100;
-
-            collision = new Rectangle((int)position.X, (int)position.Y, 10*radius, 10*radius) ;
-
+            collision = new Rectangle((int)position.X, (int)position.Y, radius, radius) ;
         }
+
+        public Entity(Dictionary<TextureTypes, Texture2D> textures, Vector2 pos) : this(textures) {
+            position = pos ;
+            Console.WriteLine($" X : {position.X} Y : {position.Y}  radius : {radius} ");
+
+            collision = new Rectangle((int)position.X, (int)position.Y, radius*100, radius*100) ;
+        }
+
+   
 
 
         public virtual void SetPos(Vector2 dest) {
@@ -74,7 +82,7 @@ namespace PrototypeRPG2D.Entities {
         }
 
         public virtual void Update(GameTime gameTime) {
-        
+            collision = new Rectangle((int)position.X, (int)position.Y, radius, radius) ;
         }
     }
 }
