@@ -35,3 +35,6 @@
 /home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/bin/Debug/net6.0/Content/Sounds/nature.ogg
 /home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/bin/Debug/net6.0/Content/Sounds/nature.xnb
 /home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/bin/Debug/net6.0/Comora.dll
+/home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/bin/Debug/net6.0/Content/Map/background.xnb
+/home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/bin/Debug/net6.0/MonoGame.Extended.dll
+/home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/bin/Debug/net6.0/Newtonsoft.Json.dll

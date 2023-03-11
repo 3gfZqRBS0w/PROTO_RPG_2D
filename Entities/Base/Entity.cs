@@ -28,7 +28,7 @@ namespace PrototypeRPG2D.Entities {
         public Dictionary<TextureTypes, Texture2D> Textures {get;}
 
 
-        public Entity(Dictionary<TextureTypes, Texture2D> textures) {
+        public Entity(Dictionary<TextureTypes, Texture2D> textures, int radius) {
             isMoving = false ; 
             position = new Vector2(0,0) ;
             Textures = textures ;
@@ -36,15 +36,15 @@ namespace PrototypeRPG2D.Entities {
             direction = Direction.Up ;
             speed = 100 ;
             life = 100 ;
-            radius = 100;
+            this.radius = radius;
             collision = new Rectangle((int)position.X, (int)position.Y, radius, radius) ;
         }
 
-        public Entity(Dictionary<TextureTypes, Texture2D> textures, Vector2 pos) : this(textures) {
+        public Entity(Dictionary<TextureTypes, Texture2D> textures,int radius ,Vector2 pos) : this(textures, radius) {
             position = pos ;
             Console.WriteLine($" X : {position.X} Y : {position.Y}  radius : {radius} ");
 
-            collision = new Rectangle((int)position.X, (int)position.Y, radius*100, radius*100) ;
+            collision = new Rectangle((int)position.X, (int)position.Y, radius, radius) ;
         }
 
    
@@ -82,7 +82,7 @@ namespace PrototypeRPG2D.Entities {
         }
 
         public virtual void Update(GameTime gameTime) {
-            collision = new Rectangle((int)position.X, (int)position.Y, radius, radius) ;
+            collision = new Rectangle((int)position.X+(radius/2), (int)position.Y+(radius/2), radius, radius) ;
         }
     }
 }

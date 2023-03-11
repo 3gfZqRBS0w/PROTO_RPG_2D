@@ -27,7 +27,6 @@ namespace PrototypeRPG2D.Maps {
 
         string name {get; set;}
         List<IObject> Entities {get; set;}
-        Texture2D background {get; set;}
         Player player {get; set;}
         Vector2 spawnPoint {get; set;}
         MapSize mapSize {get; set;}

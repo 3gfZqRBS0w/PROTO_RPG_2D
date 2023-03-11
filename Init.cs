@@ -28,18 +28,6 @@ public class Init : Game
         IsMouseVisible = true;
     }
 
-    /*
-
-        public bool CheckCollideWithEntities() {
-            foreach ( Entity ent in entities ) {
-                if ( player.collision.Intersects(ent.collision) ) {
-                    return true ; 
-                }
-            }
-            return false ; 
-        }
-    */
-
 
     protected override void Initialize()
     {
@@ -55,7 +43,7 @@ public class Init : Game
             [TextureTypes.WalkLeft] = Content.Load<Texture2D>("Player/walkLeft")
         };
 
-            map = new Map("first_map", Content.Load<Texture2D>("background"), texturePlayer, new MapSize(new Vector2(-500, -500), new Vector2(500, 500)), GraphicsDevice);
+            map = new Map("first_map", Content.Load<Texture2D>("Map/background"), texturePlayer, new MapSize(new Vector2(-1000, -1000), new Vector2(1000, 1000)), GraphicsDevice);
 
 
         // La taille de la fenêtre 

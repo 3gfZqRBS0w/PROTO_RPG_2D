@@ -36,7 +36,6 @@ namespace PrototypeRPG2D.Entities {
 
         void LoadContent(ContentManager content) ; 
         void Draw(SpriteBatch spriteBatch) ; 
-
         void Update(GameTime gameTime) ;
 
     }

@@ -14,7 +14,7 @@ namespace PrototypeRPG2D.Maps {
     public class Map : IMap {
         public string name {get;set;}
         public List<IObject> Entities {get; set;}
-        public Texture2D background {get; set;}
+        public List<TileMap> TileMap {get; set;}
         public Vector2 spawnPoint {get; set;}
         public Player player {get; set;}
 
@@ -30,14 +30,17 @@ namespace PrototypeRPG2D.Maps {
          public Map(string name, Texture2D background, Dictionary<TextureTypes, Texture2D> skin, MapSize mapSize, GraphicsDevice graphics) {
 
             // On met le debug en vrai
-            this.Debug = true ; 
+            this.Debug = false ; 
             this.name = name ;
             this.Entities = new() ; 
-            this.background = background ;
             this.mapSize = mapSize ;
 
-            this.player = new Player(skin) ;
+            this.player = new Player(skin, 10) ;
             this.camera = new Camera(graphics) ; 
+         }
+
+         public void MapInitialization() {
+
          }
 
          public void LoadContent(ContentManager content) {
@@ -51,9 +54,12 @@ namespace PrototypeRPG2D.Maps {
                 [TextureTypes.OnSite] = content.Load<Texture2D>("ball") 
             } ;
 
+
                 for (int i=0 ; i < 10 ; ++i) {
-                    Entities.Add(new Entity(textureEntite, new Vector2(rnd.Next(200,500), rnd.Next(200,500))))  ;
+                    Entities.Add(new Entity(textureEntite, 50,new Vector2(rnd.Next(-500,500), rnd.Next(-500,500))))  ;
                 }
+
+
             foreach ( IObject obj in Entities) {
                 obj.LoadContent(content) ; 
             }             
@@ -66,38 +72,55 @@ namespace PrototypeRPG2D.Maps {
          */
 
          public void Draw(SpriteBatch spriteBatch, GraphicsDevice device) {
-            
+
+            // Chargement des parties de la MAP
+
+
+
+          //  foreach ( TileMap map in TileMap) {
+            //    map.Draw(spriteBatch, device) ; 
+            //}
+
+
+
+            // Chargement de la caméra
+
             spriteBatch.Begin(this.camera) ;
 
-          //  if ( this.Debug) {
+
                 Texture2D debug = new Texture2D(device, 1,1) ;
-                debug.SetData<Color>(new Color[] {Color.White}) ;
-          //  }
-
-
-            foreach ( IObject obj in Entities ) {
-                if (this.Debug) {
-                    spriteBatch.Draw(debug, obj.collision, Color.Red) ; 
-                }
-                obj.Draw(spriteBatch) ;
-            }
-           player.Draw(spriteBatch) ;
+                debug.SetData<Color>(new Color[] {Color.DarkSlateGray }) ;
+                player.Draw(spriteBatch) ;
                      if ( this.Debug) {
-            spriteBatch.Draw(debug, player.collision,Color.Blue ) ;
-           }
- 
+                        spriteBatch.Draw(debug, player.collision,Color.Blue ) ;
+                    }
+
+
+
+        // Chargement des entités 
+            foreach ( IObject obj in Entities ) {
+                obj.Draw(spriteBatch) ;
+                if (this.Debug) {
+                    spriteBatch.Draw(debug, obj.collision, Color.White) ; 
+                }
+            }
            spriteBatch.End() ;  
          }
 
          public void Update(GameTime gameTime) {
 
 
-            
+           Console.WriteLine("ce que je dois dessiner "+Maps.TileMap.GetNumberOfTile(mapSize).ToString())  ; 
+
+
+            // Mise a jour des entités 
             foreach (IObject obj in Entities) {
                 obj.Update(gameTime) ; 
             }
 
+            // Mise a jour du joueur
             player.Update(gameTime) ;
+            
 
             // Collision check
             if ( mapSize.MaxPoint.X < player.position.X || mapSize.MinPoint.X > player.position.X  || mapSize.MaxPoint.Y < player.position.Y || mapSize.MinPoint.Y > player.position.Y || CheckCollideWithEntities() )    {
@@ -105,12 +128,10 @@ namespace PrototypeRPG2D.Maps {
             } else {
                 oldPlayerPos = player.position ;
             }
-            /*
-            Console.WriteLine($" X {mapSize.MinPoint.X}/{player.position.X}/{mapSize.MaxPoint.X}") ;
-            Console.WriteLine($" Y {mapSize.MinPoint.Y}/{player.position.Y}/{mapSize.MaxPoint.Y}") ;
-*/
-            
              
+
+
+             // Mise a jour de la caméra de l'utilisateur 
             this.camera.Position = player.position ;
             this.camera.Update(gameTime) ;
 

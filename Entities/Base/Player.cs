@@ -12,14 +12,12 @@ namespace PrototypeRPG2D.Entities {
 
 
         private KeyboardState keyboardStateOld = Keyboard.GetState();
-        public Player( Dictionary<TextureTypes, Texture2D> textures) : base(textures) {
+        public Player( Dictionary<TextureTypes, Texture2D> textures, int radius) : base(textures, radius) {
             
         }
 
         public override void LoadContent(ContentManager content)
         {
-
-
             this.animations[(int)Direction.Down] = new SpriteAnimation(Textures[TextureTypes.WalkDown], 4, 8);
             this.animations[(int)Direction.Up] = new SpriteAnimation(Textures[TextureTypes.WalkUP], 4, 8);
             this.animations[(int)Direction.Left] = new SpriteAnimation(Textures[TextureTypes.WalkLeft], 4, 8);
@@ -84,15 +82,11 @@ namespace PrototypeRPG2D.Entities {
                         break;
                 }
             }
-
-
         
             anim = animations[(int)direction];
         
             anim.Position = new Vector2(position.X - 48, position.Y - 48);
-
-        
-            
+    
             if (keyboardState.IsKeyDown(Keys.Space))
             {
                 anim.setFrame(0);
