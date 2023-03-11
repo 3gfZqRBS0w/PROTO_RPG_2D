@@ -5,22 +5,30 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace PrototypeRPG2D.Maps {
     public class TileMap {
-        private readonly Texture2D texture ;
-        private readonly Point position ;
+        private Texture2D texture  ;
 
         public readonly static int sideSize = 100 ; // 100x100
 
 
 
-        public TileMap(Texture2D texture, Point position ) {
+
+
+
+        public TileMap(Texture2D texture ) {
             this.texture = texture ;
-            this.position = position ;
 
         }
 
+        public Texture2D Texture {
+            get {
+                return texture ; 
+            }
+        }
 
-        public static int GetNumberOfTile( MapSize ms ) => (((int)ms.MaxPoint.X-(int)ms.MinPoint.X)*((int)ms.MaxPoint.Y)-(int)ms.MinPoint.Y)/sideSize ;
-        
+
+        public static int GetNumberOfTile( MapSize ms ) => (int)((ms.MaxPoint.X - ms.MinPoint.X) * (ms.MaxPoint.Y - ms.MinPoint.Y) / (sideSize*sideSize)) ; 
+
+
 
 
 

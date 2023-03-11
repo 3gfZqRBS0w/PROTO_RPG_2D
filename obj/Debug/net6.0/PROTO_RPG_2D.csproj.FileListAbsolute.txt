@@ -23,6 +23,9 @@
 /home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/obj/Debug/net6.0/ref/PROTO_RPG_2D.dll
 /home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/obj/Debug/net6.0/PROTO_RPG_2D.pdb
 /home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/obj/Debug/net6.0/PROTO_RPG_2D.genruntimeconfig.cache
+/home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/bin/Debug/net6.0/Comora.dll
+/home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/bin/Debug/net6.0/MonoGame.Extended.dll
+/home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/bin/Debug/net6.0/Newtonsoft.Json.dll
 /home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/bin/Debug/net6.0/Content/background.xnb
 /home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/bin/Debug/net6.0/Content/ball.xnb
 /home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/bin/Debug/net6.0/Content/Player/player.xnb
@@ -34,7 +37,4 @@
 /home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/bin/Debug/net6.0/Content/Sounds/blip.xnb
 /home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/bin/Debug/net6.0/Content/Sounds/nature.ogg
 /home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/bin/Debug/net6.0/Content/Sounds/nature.xnb
-/home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/bin/Debug/net6.0/Comora.dll
 /home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/bin/Debug/net6.0/Content/Map/background.xnb
-/home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/bin/Debug/net6.0/MonoGame.Extended.dll
-/home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/bin/Debug/net6.0/Newtonsoft.Json.dll

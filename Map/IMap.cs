@@ -32,8 +32,12 @@ namespace PrototypeRPG2D.Maps {
         MapSize mapSize {get; set;}
         Camera camera {get; set;}
 
+        List<TileMap> tilemaps {get; set;}  
+
+
         bool Debug {get; set;}
         List<IObject> GetEntities() ;
+
 
 
         void LoadContent(ContentManager content) ; 

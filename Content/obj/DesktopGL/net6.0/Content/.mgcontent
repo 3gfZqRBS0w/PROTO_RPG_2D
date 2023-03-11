@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>/home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/Content/background.png</File>
+    <File>/home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/Content/ball.png</File>
+    <File>/home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/Content/Map/background.png</File>
+    <File>/home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/Content/Player/player.png</File>
+    <File>/home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/Content/Player/walkDown.png</File>
+    <File>/home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/Content/Player/walkLeft.png</File>
+    <File>/home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/Content/Player/walkRight.png</File>
+    <File>/home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/Content/Player/walkUp.png</File>
+    <File>/home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/Content/skull.png</File>
+    <File>/home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/Content/Sounds/blip.wav</File>
+    <File>/home/d8kvguub/Desktop/PERSO/PROJETLOGICIEL/CS/PROTO_RPG_2D/Content/Sounds/nature.ogg</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>

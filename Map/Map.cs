@@ -14,7 +14,7 @@ namespace PrototypeRPG2D.Maps {
     public class Map : IMap {
         public string name {get;set;}
         public List<IObject> Entities {get; set;}
-        public List<TileMap> TileMap {get; set;}
+        public List<TileMap> tilemaps {get; set;}
         public Vector2 spawnPoint {get; set;}
         public Player player {get; set;}
 
@@ -36,16 +36,36 @@ namespace PrototypeRPG2D.Maps {
             this.mapSize = mapSize ;
 
             this.player = new Player(skin, 10) ;
-            this.camera = new Camera(graphics) ; 
+            this.camera = new Camera(graphics) ;
+
+            tilemaps = new() ; 
          }
 
-         public void MapInitialization() {
+         public void MapInitialization(SpriteBatch spriteBatch) {
 
+            spriteBatch.Begin() ;
+            int texturedId = 0 ; 
+            for ( int x = (int)mapSize.MinPoint.X ; x < (int)mapSize.MaxPoint.X ; x+=100 ) {
+                for ( int y = (int)mapSize.MinPoint.Y ; y < (int)mapSize.MaxPoint.Y ; y+=100 ) {
+
+                    spriteBatch.Draw(tilemaps[texturedId].Texture , new Vector2(x,y), Color.Blue) ;
+
+                    //Console.WriteLine("ce que je veux : "+texturedId) ; 
+                    texturedId++ ;
+                } 
+            }
+            spriteBatch.End() ; 
+            
          }
 
          public void LoadContent(ContentManager content) {
             
             Random rnd = new Random() ;
+
+            // Chargement des tuiles de la map 
+            for ( int i = 0; i <= TileMap.GetNumberOfTile( mapSize ); i++) {
+                tilemaps.Add(new TileMap(content.Load<Texture2D>("ball"))) ; 
+            }
 
             player.LoadContent(content) ;
 
@@ -73,13 +93,18 @@ namespace PrototypeRPG2D.Maps {
 
          public void Draw(SpriteBatch spriteBatch, GraphicsDevice device) {
 
+
+                Texture2D debug = new Texture2D(device, 1,1) ;
+                debug.SetData<Color>(new Color[] {Color.DarkSlateGray }) ;
+
+               
+
+
             // Chargement des parties de la MAP
 
 
+            MapInitialization(spriteBatch) ; 
 
-          //  foreach ( TileMap map in TileMap) {
-            //    map.Draw(spriteBatch, device) ; 
-            //}
 
 
 
@@ -87,9 +112,6 @@ namespace PrototypeRPG2D.Maps {
 
             spriteBatch.Begin(this.camera) ;
 
-
-                Texture2D debug = new Texture2D(device, 1,1) ;
-                debug.SetData<Color>(new Color[] {Color.DarkSlateGray }) ;
                 player.Draw(spriteBatch) ;
                      if ( this.Debug) {
                         spriteBatch.Draw(debug, player.collision,Color.Blue ) ;
